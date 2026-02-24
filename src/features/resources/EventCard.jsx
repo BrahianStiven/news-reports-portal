@@ -17,7 +17,7 @@ export default function EventCard({ event }) {
                 <div className="min-w-0">
                     <p className="text-xs text-zinc-500 dark:text-zinc-400">{formatDate(event.date)}</p>
                     <h3
-                        className="mt-1 line-clamp-3 text-sm font-semibold tracking-tight"
+                        className="mt-1 text-sm font-semibold tracking-tight text-zinc-900 dark:text-zinc-50 whitespace-normal break-words"
                         title={event.title}
                     >
                         {event.title}
