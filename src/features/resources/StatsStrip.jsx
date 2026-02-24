@@ -6,7 +6,11 @@ function StatCard({ label, value, hint, accent, labelTint }) {
         {label}
       </div>
       <p className="mt-2 text-3xl font-semibold tracking-tight">{value}</p>
-      {hint ? <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">{hint}</p> : null}
+      {hint ? (
+        <p className="mt-2 text-sm leading-snug text-zinc-600 dark:text-zinc-300">
+          {hint}
+        </p>
+      ) : null}
     </div>
   );
 }
