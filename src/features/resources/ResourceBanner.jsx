@@ -121,7 +121,7 @@ export default function ResourceBanner({ banner, activeTab, allItems }) {
           })}
         </div>
 
-        <div className="relative px-6 py-14 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
+        <div className="relative min-h-[320px] px-6 py-14 sm:min-h-[360px] sm:px-10 sm:py-16 lg:min-h-[420px] lg:px-14 lg:py-20">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-300">
