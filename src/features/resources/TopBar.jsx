@@ -2,7 +2,7 @@ import ThemeToggle from "../../ui/ThemeToggle";
 
 export default function TopBar({ siteName, lastUpdate }) {
   return (
-    <header className="sticky top-0 z-30 border-b border-zinc-200/70 bg-white/65 backdrop-blur dark:border-zinc-800/70 dark:bg-zinc-950/55">
+    <header className="sticky top-0 z-30 border-b border-zinc-200/70 bg-gradient-to-r from-emerald-50/70 via-white/60 to-cyan-50/70 backdrop-blur dark:border-zinc-800/70 dark:from-emerald-950/40 dark:via-zinc-950/55 dark:to-cyan-950/30">
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-3 px-4 py-3 sm:px-6 lg:px-8">
         <div className="flex min-w-0 items-center gap-3">
           <div className="grid h-10 w-10 place-items-center rounded-2xl bg-gradient-to-br from-emerald-500 to-cyan-400 text-white shadow-sm">
