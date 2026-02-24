@@ -1,8 +1,7 @@
 import ResourceBanner from "./ResourceBanner";
 import ResourceList from "./ResourceList";
-import { useState } from "react";
 import ResourceDetailsDialog from "./ResourceDetailsDialog";
-
+import { useEffect, useMemo, useState } from "react";
 
 const tabs = [
   { key: "informe", label: "Informes" },
@@ -11,12 +10,30 @@ const tabs = [
 
 export default function ResourceTabs({ activeTab, onTabChange, banner, allItems, items, referenceDate }) {
   const [open, setOpen] = useState(false);
-  const [selected, setSelected] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(-1);
+
+  const collection = useMemo(() => items, [items]);
 
   function openDetails(resource) {
-    setSelected(resource);
+    const idx = collection.findIndex((x) => x.id === resource.id);
+    setSelectedIndex(idx >= 0 ? idx : 0);
     setOpen(true);
   }
+
+  function closeDetails() {
+    setOpen(false);
+  }
+
+  useEffect(() => {
+    if (!open) return;
+    if (collection.length === 0) {
+      setOpen(false);
+      return;
+    }
+    if (selectedIndex < 0) setSelectedIndex(0);
+    if (selectedIndex >= collection.length) setSelectedIndex(collection.length - 1);
+  }, [open, collection.length, selectedIndex]);
+
 
   return (
     <section className="space-y-6">
@@ -57,8 +74,10 @@ export default function ResourceTabs({ activeTab, onTabChange, banner, allItems,
 
       <ResourceDetailsDialog
         open={open}
-        onClose={() => setOpen(false)}
-        resource={selected}
+        onClose={closeDetails}
+        collection={collection}
+        index={selectedIndex}
+        onNavigate={(nextIndex) => setSelectedIndex(nextIndex)}
         fallbackImage={banner.imageUrl}
       />
     </section>
