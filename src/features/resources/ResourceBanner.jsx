@@ -11,12 +11,11 @@ function buildSlides(banner, allItems) {
     .slice()
     .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
 
-  const bannerCta =
-    banner?.ctaUrl?.startsWith("http")
-      ? { label: "Ver destacado", url: banner.ctaUrl }
-      : latestReport
-        ? { label: "Ver último informe", url: latestReport.fileUrl }
-        : { label: "Ver destacado", url: "" };
+  const bannerCta = banner?.ctaUrl
+    ? { label: "Ver destacado", url: banner.ctaUrl }
+    : latestReport
+      ? { label: "Ver último informe", url: latestReport.fileUrl }
+      : { label: "Ver destacado", url: "" };
 
   const itemSlides = (allItems ?? [])
     .filter((x) => x?.thumbnail)
@@ -140,8 +139,8 @@ export default function ResourceBanner({ banner, activeTab, allItems }) {
                 {current?.ctaUrl ? (
                   <a
                     href={current.ctaUrl}
-                    target={current.ctaUrl.startsWith("http") ? "_blank" : undefined}
-                    rel={current.ctaUrl.startsWith("http") ? "noreferrer" : undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="inline-flex items-center justify-center rounded-2xl bg-emerald-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-emerald-500 hover:shadow-md active:translate-y-0"
                   >
                     {current.ctaLabel}

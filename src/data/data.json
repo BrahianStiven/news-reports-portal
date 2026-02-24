@@ -17,8 +17,8 @@
       "category": "Climatología",
       "date": "2026-01-15",
       "thumbnail": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400&h=250&auto=format&fit=crop",
-      "fileUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "fileSize": "2.4 MB"
+      "fileUrl": "/reports/boletin_221.pdf",
+      "fileSize": "695.4 KB"
     },
     {
       "id": "102",
@@ -36,8 +36,8 @@
       "category": "Glaciología",
       "date": "2026-02-10",
       "thumbnail": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=400&h=250&auto=format&fit=crop",
-      "fileUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "fileSize": "1.8 MB"
+      "fileUrl": "/reports/boletin_222.pdf",
+      "fileSize": "1.4 MB"
     },
     {
       "id": "104",
@@ -55,8 +55,8 @@
       "category": "Meteorología",
       "date": "2026-02-18",
       "thumbnail": "https://images.unsplash.com/photo-1580193769110-38446ec45f22?q=80&w=400&h=250&auto=format&fit=crop",
-      "fileUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-      "fileSize": "3.1 MB"
+      "fileUrl": "/reports/boletin_223.pdf",
+      "fileSize": "2.1 MB"
     }
   ]
 }
