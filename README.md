@@ -8,24 +8,24 @@ Centro de recursos en React + Vite + Tailwind, renderizando un dataset JSON con 
 
 ## Correr en local
 
-git clone https://github.com/BrahianStiven/news-reports-portal.git
-cd news-reports-portal
-npm install
-npm run dev
+- git clone https://github.com/BrahianStiven/news-reports-portal.git
+- cd news-reports-portal
+- npm install
+- npm run dev
 
 ## Build local 
 
-cd news-reports-portal
-npm run build
-npm run preview
+- cd news-reports-portal
+- npm run build
+- npm run preview
 
 ## Correr con Docker (sin Node local)
 
-cd news-reports-portal
-docker build -t news-reports-portal .
-docker run --rm -p 8080:80 news-reports-portal
+- cd news-reports-portal
+- docker build -t news-reports-portal .
+- docker run --rm -p 8080:80 news-reports-portal
 
-Abre: **http://localhost:8080**
+- Abre: **http://localhost:8080**
 
 ## Stack
 - React 18 + Hooks
