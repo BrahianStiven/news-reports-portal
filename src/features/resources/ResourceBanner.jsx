@@ -6,6 +6,18 @@ function clampIndex(i, len) {
 }
 
 function buildSlides(banner, allItems) {
+  const reports = (allItems ?? []).filter((x) => x?.type === "informe" && x?.fileUrl);
+  const latestReport = reports
+    .slice()
+    .sort((a, b) => new Date(b.date) - new Date(a.date))[0];
+
+  const bannerCta =
+    banner?.ctaUrl?.startsWith("http")
+      ? { label: "Ver destacado", url: banner.ctaUrl }
+      : latestReport
+        ? { label: "Ver último informe", url: latestReport.fileUrl }
+        : { label: "Ver destacado", url: "" };
+
   const itemSlides = (allItems ?? [])
     .filter((x) => x?.thumbnail)
     .slice(0, 4)
@@ -13,7 +25,7 @@ function buildSlides(banner, allItems) {
       imageUrl: x.thumbnail,
       title: x.title,
       subtitle: `${x.category} • ${x.date}`,
-      ctaLabel: x.type === "informe" ? "Ver PDF" : "Ver detalles",
+      ctaLabel: x.type === "informe" ? "Ver PDF" : "",
       ctaUrl: x.type === "informe" ? x.fileUrl : "",
     }));
 
@@ -22,8 +34,8 @@ function buildSlides(banner, allItems) {
       imageUrl: banner.imageUrl,
       title: banner.title,
       subtitle: banner.description,
-      ctaLabel: "Ver destacado",
-      ctaUrl: banner.ctaUrl,
+      ctaLabel: bannerCta.label,
+      ctaUrl: bannerCta.url,
     },
     ...itemSlides,
   ];
