@@ -13,7 +13,18 @@ body,
 }
 
 body {
-  @apply bg-zinc-50 text-zinc-900 antialiased dark:bg-zinc-950 dark:text-zinc-50;
+  @apply text-zinc-900 antialiased dark:text-zinc-50;
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(16, 185, 129, 0.18), transparent 60%),
+    radial-gradient(700px 450px at 90% 10%, rgba(34, 211, 238, 0.12), transparent 55%),
+    rgb(250 250 250);
+}
+
+.dark body {
+  background:
+    radial-gradient(900px 500px at 20% 0%, rgba(16, 185, 129, 0.14), transparent 60%),
+    radial-gradient(700px 450px at 90% 10%, rgba(34, 211, 238, 0.10), transparent 55%),
+    rgb(9 9 11);
 }
 
 @keyframes shine {
@@ -21,9 +32,11 @@ body {
     transform: translateX(0) skewX(-12deg);
     opacity: 0;
   }
+
   30% {
     opacity: 1;
   }
+
   to {
     transform: translateX(220%) skewX(-12deg);
     opacity: 0;
