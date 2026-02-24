@@ -27,13 +27,7 @@ export default function ReportCard({ report, referenceDate }) {
 
     return (
         <article className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
-            className={[
-                "inline-flex items-center justify-center rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-sm transition",
-                "hover:-translate-y-0.5 hover:shadow-md active:translate-y-0",
-                "bg-gradient-to-r",
-                tone.accent,
-                "ring-1 ring-white/20",
-            ].join(" ")}
+            <div className={["h-1 w-full bg-gradient-to-r opacity-65", tone.accent].join(" ")} />
             <div className="relative">
                 {report.thumbnail && imgOk ? (
                     <img
@@ -76,8 +70,8 @@ export default function ReportCard({ report, referenceDate }) {
                             className={[
                                 "inline-flex items-center justify-center rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-sm transition",
                                 "hover:-translate-y-0.5 hover:shadow-md active:translate-y-0",
-                                "bg-gradient-to-r",
-                                tone.accent,
+                                "bg-gradient-to-br from-emerald-500 to-cyan-400",
+                                "ring-1 ring-white/25",
                             ].join(" ")}
                         >
                             Ver PDF
