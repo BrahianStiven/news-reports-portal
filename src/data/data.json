@@ -1,0 +1,62 @@
+{
+  "metadata": {
+    "site_name": "EcoMonitor Global",
+    "last_update": "2026-02-22"
+  },
+  "banner": {
+    "title": "Reporte Anual de Emisiones 2025",
+    "description": "Ya está disponible el análisis detallado del impacto ambiental del último año.",
+    "imageUrl": "https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?q=80&w=1920&auto=format&fit=crop",
+    "ctaUrl": "/reports/annual-2025.pdf"
+  },
+  "items": [
+    {
+      "id": "101",
+      "type": "informe",
+      "title": "Análisis del Fenómeno de El Niño",
+      "category": "Climatología",
+      "date": "2026-01-15",
+      "thumbnail": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=400&h=250&auto=format&fit=crop",
+      "fileUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "fileSize": "2.4 MB"
+    },
+    {
+      "id": "102",
+      "type": "evento",
+      "title": "Día Mundial de la Educación Ambiental",
+      "category": "Concientización",
+      "date": "2026-01-26",
+      "location": "Global / Digital",
+      "description": "Jornada internacional para promover la protección de los ecosistemas."
+    },
+    {
+      "id": "103",
+      "type": "informe",
+      "title": "Variación Térmica en los Andes",
+      "category": "Glaciología",
+      "date": "2026-02-10",
+      "thumbnail": "https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=400&h=250&auto=format&fit=crop",
+      "fileUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "fileSize": "1.8 MB"
+    },
+    {
+      "id": "104",
+      "type": "evento",
+      "title": "Día Mundial de los Humedales",
+      "category": "Biodiversidad",
+      "date": "2026-02-02",
+      "location": "Reservas Naturales",
+      "description": "Actividades de limpieza y avistamiento en zonas protegidas."
+    },
+    {
+      "id": "105",
+      "type": "informe",
+      "title": "Índice de Calidad del Aire - Q1",
+      "category": "Meteorología",
+      "date": "2026-02-18",
+      "thumbnail": "https://images.unsplash.com/photo-1580193769110-38446ec45f22?q=80&w=400&h=250&auto=format&fit=crop",
+      "fileUrl": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+      "fileSize": "3.1 MB"
+    }
+  ]
+}
