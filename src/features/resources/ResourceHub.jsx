@@ -4,6 +4,7 @@ import { applyResourceFilters, buildResourceStats, getAllCategories } from "../.
 import TopBar from "./TopBar";
 import StatsStrip from "./StatsStrip";
 import ResourceTabs from "./ResourceTabs";
+import FilterDock from "./FilterDock";
 
 export default function ResourceHub() {
   const { metadata, banner, items } = portalData;
@@ -36,37 +37,45 @@ export default function ResourceHub() {
       >
         Saltar al contenido
       </a>
-      <TopBar
-        siteName={metadata.site_name}
-        lastUpdate={metadata.last_update}
-        query={query}
-        onQueryChange={setQuery}
-        categories={categories}
-        category={category}
-        onCategoryChange={setCategory}
-        fromDate={fromDate}
-        onFromDateChange={setFromDate}
-        toDate={toDate}
-        onToDateChange={setToDate}
-        onClearFilters={() => {
-          setQuery("");
-          setCategory("all");
-          setFromDate("");
-          setToDate("");
-        }}
-      />
+      <TopBar siteName={metadata.site_name} lastUpdate={metadata.last_update} />
 
-      <main id="main-content" className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
-        <StatsStrip stats={stats} />
+      <main
+        id="main-content"
+        className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8"
+      >
+        <div className="flex items-start gap-6">
+          <FilterDock
+            query={query}
+            onQueryChange={setQuery}
+            categories={categories}
+            category={category}
+            onCategoryChange={setCategory}
+            fromDate={fromDate}
+            onFromDateChange={setFromDate}
+            toDate={toDate}
+            onToDateChange={setToDate}
+            onClearFilters={() => {
+              setQuery("");
+              setCategory("all");
+              setFromDate("");
+              setToDate("");
+            }}
+            resultsCount={filtered.length}
+          />
 
-        <ResourceTabs
-          activeTab={activeTab}
-          onTabChange={setActiveTab}
-          banner={banner}
-          allItems={items}
-          items={filtered}
-          referenceDate={metadata.last_update}
-        />
+          <div className="min-w-0 flex-1">
+            <StatsStrip stats={stats} />
+
+            <ResourceTabs
+              activeTab={activeTab}
+              onTabChange={setActiveTab}
+              banner={banner}
+              allItems={items}
+              items={filtered}
+              referenceDate={metadata.last_update}
+            />
+          </div>
+        </div>
       </main>
     </div>
   );
