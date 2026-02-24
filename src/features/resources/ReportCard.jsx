@@ -16,7 +16,7 @@ function isFresh(dateStr, referenceDate, days = 14) {
     return diffDays <= days;
 }
 
-export default function ReportCard({ report, referenceDate }) {
+export default function ReportCard({ report, referenceDate, onOpen }) {
     const [imgOk, setImgOk] = useState(true);
     const tone = categoryTone(report.category);
 
@@ -26,7 +26,15 @@ export default function ReportCard({ report, referenceDate }) {
     );
 
     return (
-        <article className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+        <article
+            onClick={onOpen}
+            onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") onOpen?.();
+            }}
+            tabIndex={0}
+            role="button"
+            className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none dark:border-zinc-800 dark:bg-zinc-900"
+        >
             <div className={["h-1 w-full bg-gradient-to-r opacity-65", tone.accent].join(" ")} />
             <div className="relative">
                 {report.thumbnail && imgOk ? (
@@ -67,6 +75,7 @@ export default function ReportCard({ report, referenceDate }) {
                             href={report.fileUrl}
                             target="_blank"
                             rel="noreferrer"
+                            onClick={(e) => e.stopPropagation()}
                             className={[
                                 "inline-flex items-center justify-center rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-sm transition",
                                 "hover:-translate-y-0.5 hover:shadow-md active:translate-y-0",

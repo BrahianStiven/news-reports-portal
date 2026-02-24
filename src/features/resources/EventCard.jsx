@@ -6,11 +6,19 @@ function formatDate(dateStr) {
     return new Intl.DateTimeFormat("es-CO", { year: "numeric", month: "short", day: "2-digit" }).format(d);
 }
 
-export default function EventCard({ event }) {
+export default function EventCard({ event, onOpen }) {
     const tone = categoryTone(event.category);
 
     return (
-        <article className="group rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+        <article
+            onClick={onOpen}
+            onKeyDown={(e) => {
+                if (e.key === "Enter" || e.key === " ") onOpen?.();
+            }}
+            tabIndex={0}
+            role="button"
+            className="group rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md focus:outline-none dark:border-zinc-800 dark:bg-zinc-900"
+        >
             <div className={["mb-3 h-1 w-full rounded-full bg-gradient-to-r opacity-85", tone.accent].join(" ")} />
 
             <div className="flex items-start justify-between gap-3">

@@ -1,5 +1,8 @@
 import ResourceBanner from "./ResourceBanner";
 import ResourceList from "./ResourceList";
+import { useState } from "react";
+import ResourceDetailsDialog from "./ResourceDetailsDialog";
+
 
 const tabs = [
   { key: "informe", label: "Informes" },
@@ -7,6 +10,14 @@ const tabs = [
 ];
 
 export default function ResourceTabs({ activeTab, onTabChange, banner, allItems, items, referenceDate }) {
+  const [open, setOpen] = useState(false);
+  const [selected, setSelected] = useState(null);
+
+  function openDetails(resource) {
+    setSelected(resource);
+    setOpen(true);
+  }
+
   return (
     <section className="space-y-6">
       <ResourceBanner banner={banner} activeTab={activeTab} allItems={allItems} />
@@ -37,7 +48,19 @@ export default function ResourceTabs({ activeTab, onTabChange, banner, allItems,
         <p className="text-xs text-zinc-500 dark:text-zinc-400">{items.length} resultados</p>
       </div>
 
-      <ResourceList activeTab={activeTab} items={items} referenceDate={referenceDate} />
+      <ResourceList
+        activeTab={activeTab}
+        items={items}
+        referenceDate={referenceDate}
+        onSelect={openDetails}
+      />
+
+      <ResourceDetailsDialog
+        open={open}
+        onClose={() => setOpen(false)}
+        resource={selected}
+        fallbackImage={banner.imageUrl}
+      />
     </section>
   );
 }
