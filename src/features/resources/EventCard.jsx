@@ -6,14 +6,15 @@ function formatDate(dateStr) {
 
 export default function EventCard({ event }) {
   return (
-    <article className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+    <article className="group rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="mb-3 h-1 w-full rounded-full bg-gradient-to-r from-emerald-500 via-cyan-400 to-violet-400 opacity-80" />
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <p className="text-xs text-zinc-500 dark:text-zinc-400">{formatDate(event.date)}</p>
           <h3 className="mt-1 line-clamp-2 text-sm font-semibold tracking-tight">{event.title}</h3>
         </div>
 
-        <span className="shrink-0 rounded-full bg-emerald-600/10 px-3 py-1 text-xs font-semibold text-emerald-700 dark:text-emerald-300">
+        <span className="shrink-0 rounded-full bg-gradient-to-r from-emerald-600 to-cyan-500 px-3 py-1 text-xs font-semibold text-white shadow-sm">
           {event.category}
         </span>
       </div>
