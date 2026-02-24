@@ -27,6 +27,7 @@ export default function ReportCard({ report, referenceDate }) {
 
     return (
         <article className="group overflow-hidden rounded-2xl border border-zinc-200 bg-white shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900">
+            <div className={["h-1 w-full bg-gradient-to-r opacity-85", tone.accent].join(" ")} />
             <div className="relative">
                 {report.thumbnail && imgOk ? (
                     <img
@@ -47,7 +48,7 @@ export default function ReportCard({ report, referenceDate }) {
                         {report.category}
                     </span>
                     {fresh ? (
-                        <span className="rounded-full bg-emerald-600 px-3 py-1 text-xs font-semibold text-white shadow-sm">
+                        <span className={["rounded-full px-3 py-1 text-xs font-semibold text-white shadow-sm", tone.chip].join(" ")}>
                             Nuevo
                         </span>
                     ) : null}
@@ -66,7 +67,12 @@ export default function ReportCard({ report, referenceDate }) {
                             href={report.fileUrl}
                             target="_blank"
                             rel="noreferrer"
-                            className="inline-flex items-center justify-center rounded-xl bg-zinc-900 px-3 py-2 text-xs font-semibold text-white transition hover:bg-zinc-800 active:translate-y-[1px] dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-100"
+                            className={[
+                                "inline-flex items-center justify-center rounded-xl px-3 py-2 text-xs font-semibold text-white shadow-sm transition",
+                                "hover:-translate-y-0.5 hover:shadow-md active:translate-y-0",
+                                "bg-gradient-to-r",
+                                tone.accent,
+                            ].join(" ")}
                         >
                             Ver PDF
                         </a>
