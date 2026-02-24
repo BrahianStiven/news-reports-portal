@@ -51,6 +51,7 @@ export default function ResourceDetailsDialog({
     const [copied, setCopied] = useState(false);
     const [copyError, setCopyError] = useState(false);
 
+
     const nav = useMemo(() => {
         const hasPrev = index > 0;
         const hasNext = index < safeCollection.length - 1;
@@ -63,15 +64,17 @@ export default function ResourceDetailsDialog({
         setCopyError(false);
     }, [open, index]);
 
-    if (!current) return null;
+    const image = current?.thumbnail || fallbackImage || "";
 
-    const isReport = current.type === "informe";
-    const image = current.thumbnail || fallbackImage || "";
     const [imageOk, setImageOk] = useState(true);
 
     useEffect(() => {
         setImageOk(true);
     }, [image]);
+
+    if (!open || !current) return null;
+
+    const isReport = current.type === "informe";
 
     async function onCopyLink() {
         setCopyError(false);
