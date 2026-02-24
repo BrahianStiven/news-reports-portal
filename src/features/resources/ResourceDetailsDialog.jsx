@@ -191,6 +191,13 @@ export default function ResourceDetailsDialog({
                                 {current.title}
                             </Dialog.Title>
 
+                            <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
+                                Tip: usa <span className="rounded-md bg-zinc-900/5 px-2 py-0.5 font-semibold dark:bg-white/10">←</span>{" "}
+                                <span className="rounded-md bg-zinc-900/5 px-2 py-0.5 font-semibold dark:bg-white/10">→</span>{" "}
+                                para navegar y <span className="rounded-md bg-zinc-900/5 px-2 py-0.5 font-semibold dark:bg-white/10">Esc</span>{" "}
+                                para cerrar.
+                            </p>
+
                             {current.location ? (
                                 <p className="mt-2 text-sm text-zinc-600 dark:text-zinc-300">
                                     Ubicación: <span className="font-medium">{current.location}</span>
