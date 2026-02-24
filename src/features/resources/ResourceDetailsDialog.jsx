@@ -67,6 +67,11 @@ export default function ResourceDetailsDialog({
 
     const isReport = current.type === "informe";
     const image = current.thumbnail || fallbackImage || "";
+    const [imageOk, setImageOk] = useState(true);
+
+    useEffect(() => {
+        setImageOk(true);
+    }, [image]);
 
     async function onCopyLink() {
         setCopyError(false);
@@ -105,15 +110,14 @@ export default function ResourceDetailsDialog({
                         className="w-full max-w-2xl overflow-hidden rounded-3xl border border-zinc-200 bg-white shadow-xl dark:border-zinc-800 dark:bg-zinc-950"
                     >
                         <div className="relative">
-                            {image ? (
+                            {image && imageOk ? (
                                 <img
+                                    key={image}
                                     src={image}
                                     alt=""
                                     className="h-56 w-full object-cover"
                                     loading="lazy"
-                                    onError={(e) => {
-                                        e.currentTarget.style.display = "none";
-                                    }}
+                                    onError={() => setImageOk(false)}
                                 />
                             ) : (
                                 <div className="h-56 w-full bg-gradient-to-br from-emerald-200 via-cyan-100 to-white dark:from-emerald-950/40 dark:via-cyan-950/20 dark:to-zinc-950" />
