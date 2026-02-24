@@ -65,7 +65,7 @@ export function categoryTone(category) {
     return {
       chip: "bg-sky-600 text-white",
       chipSoft: "bg-sky-600/10 text-sky-800 dark:text-sky-200 dark:bg-sky-500/10",
-      accent: "from-sky-500 via-cyan-400 to-emerald-400",
+      accent: "from-emerald-500/70 via-cyan-400/60 to-sky-400/60",
     };
   }
 
@@ -73,7 +73,7 @@ export function categoryTone(category) {
     return {
       chip: "bg-indigo-600 text-white",
       chipSoft: "bg-indigo-600/10 text-indigo-800 dark:text-indigo-200 dark:bg-indigo-500/10",
-      accent: "from-indigo-500 via-sky-400 to-cyan-300",
+      accent: "from-sky-500/65 via-indigo-400/55 to-cyan-300/55",
     };
   }
 
@@ -81,7 +81,7 @@ export function categoryTone(category) {
     return {
       chip: "bg-emerald-600 text-white",
       chipSoft: "bg-emerald-600/10 text-emerald-800 dark:text-emerald-200 dark:bg-emerald-500/10",
-      accent: "from-emerald-500 via-lime-400 to-amber-300",
+      accent: "from-emerald-500/70 via-lime-400/55 to-amber-300/45",
     };
   }
 
@@ -89,7 +89,7 @@ export function categoryTone(category) {
     return {
       chip: "bg-violet-600 text-white",
       chipSoft: "bg-violet-600/10 text-violet-800 dark:text-violet-200 dark:bg-violet-500/10",
-      accent: "from-violet-500 via-fuchsia-400 to-rose-300",
+      accent: "from-cyan-500/65 via-emerald-400/55 to-sky-400/55",
     };
   }
 
@@ -97,13 +97,13 @@ export function categoryTone(category) {
     return {
       chip: "bg-amber-600 text-white",
       chipSoft: "bg-amber-600/10 text-amber-900 dark:text-amber-200 dark:bg-amber-500/10",
-      accent: "from-amber-500 via-orange-400 to-rose-300",
+      accent: "from-amber-500/60 via-emerald-400/45 to-cyan-300/45",
     };
   }
 
   return {
     chip: "bg-zinc-800 text-white dark:bg-zinc-100 dark:text-zinc-900",
     chipSoft: "bg-zinc-900/10 text-zinc-800 dark:text-zinc-200 dark:bg-white/10",
-    accent: "from-emerald-500 via-cyan-400 to-violet-400",
+    accent: "from-emerald-500/65 via-cyan-400/55 to-sky-400/55",
   };
 }
