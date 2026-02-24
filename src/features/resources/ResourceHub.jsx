@@ -57,7 +57,9 @@ export default function ResourceHub() {
           activeTab={activeTab}
           onTabChange={setActiveTab}
           banner={banner}
+          allItems={items}
           items={filtered}
+          referenceDate={metadata.last_update}
         />
       </main>
     </div>
