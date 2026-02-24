@@ -1,20 +1,24 @@
-export default function ResourceList({ activeTab, items }) {
+import EventCard from "./EventCard";
+import ReportCard from "./ReportCard";
+
+export default function ResourceList({ activeTab, items, referenceDate }) {
+  if (!items.length) {
+    return (
+      <div className="rounded-2xl border border-dashed border-zinc-300 bg-white p-8 text-center text-sm text-zinc-600 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300">
+        No hay resultados con los filtros actuales.
+      </div>
+    );
+  }
+
   return (
     <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((x) => (
-        <article
-          key={x.id}
-          className="rounded-2xl border border-zinc-200 bg-white p-4 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md dark:border-zinc-800 dark:bg-zinc-900"
-        >
-          <p className="text-xs text-zinc-500 dark:text-zinc-400">{x.date}</p>
-          <h3 className="mt-1 text-sm font-semibold">{x.title}</h3>
-          <p className="mt-2 text-xs text-zinc-600 dark:text-zinc-300">{x.category}</p>
-
-          {activeTab === "evento" && x.location ? (
-            <p className="mt-2 text-xs text-zinc-500 dark:text-zinc-400">{x.location}</p>
-          ) : null}
-        </article>
-      ))}
+      {items.map((x) =>
+        activeTab === "informe" ? (
+          <ReportCard key={x.id} report={x} referenceDate={referenceDate} />
+        ) : (
+          <EventCard key={x.id} event={x} />
+        )
+      )}
     </div>
   );
 }
