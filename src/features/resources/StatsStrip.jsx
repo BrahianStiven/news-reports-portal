@@ -1,6 +1,30 @@
 function StatCard({ label, value, hint, accent, labelTint }) {
   return (
     <div className="relative overflow-hidden rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="pointer-events-none absolute right-4 top-4 opacity-[0.12] dark:opacity-[0.10]">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" className="text-zinc-900 dark:text-white">
+          <path
+            d="M4 14c2.5-2.5 4.5-2.5 7 0s4.5 2.5 9-2"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+          />
+          <path
+            d="M4 19h16"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            opacity="0.8"
+          />
+          <path
+            d="M6 9c1.5-2 3.2-3 6-3 3.2 0 5.3 1.4 6 4"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            opacity="0.9"
+          />
+        </svg>
+      </div>
       <div className={["absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl opacity-60", accent].join(" ")} />
       <div className={["inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold", labelTint].join(" ")}>
         {label}
