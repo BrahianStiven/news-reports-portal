@@ -71,10 +71,18 @@ export default function ResourceBanner({ banner, activeTab, allItems }) {
 
   return (
     <section
-      className="group overflow-hidden rounded-3xl border border-zinc-200 bg-gradient-to-br from-emerald-50 to-white shadow-sm dark:border-zinc-800 dark:from-emerald-950/30 dark:to-zinc-950"
+      className="group relative overflow-hidden rounded-[28px] border border-zinc-200 bg-gradient-to-br from-emerald-50 via-white to-white shadow-[0_12px_50px_-30px_rgba(0,0,0,0.45)] dark:border-zinc-800 dark:from-emerald-950/35 dark:via-zinc-950 dark:to-zinc-950"
+
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
+      <div className="pointer-events-none absolute -inset-24 opacity-0 blur-3xl transition duration-700 group-hover:opacity-100">
+        <div className="h-full w-full bg-[radial-gradient(circle_at_30%_30%,rgba(16,185,129,0.30),transparent_55%)]" />
+      </div>
+
+      <div className="pointer-events-none absolute inset-0 opacity-0 transition duration-700 group-hover:opacity-100">
+        <div className="absolute -left-1/2 top-0 h-full w-1/2 -skew-x-12 bg-gradient-to-r from-transparent via-white/35 to-transparent dark:via-white/10 animate-[shine_1.2s_ease-out]" />
+      </div>
       <div className="relative">
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-r from-white via-white/70 to-white/10 dark:from-zinc-950 dark:via-zinc-950/60 dark:to-zinc-950/10" />
@@ -101,18 +109,18 @@ export default function ResourceBanner({ banner, activeTab, allItems }) {
           })}
         </div>
 
-        <div className="relative px-6 py-10 sm:px-10">
+        <div className="relative px-6 py-14 sm:px-10 sm:py-16 lg:px-14 lg:py-20">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
             <div className="max-w-2xl">
               <p className="text-xs font-semibold uppercase tracking-widest text-emerald-700 dark:text-emerald-300">
                 Centro de recursos • {activeTab === "informe" ? "Informes" : "Eventos"}
               </p>
 
-              <h1 className="mt-3 text-2xl font-semibold tracking-tight sm:text-3xl">
+              <h1 className="mt-4 text-3xl font-semibold tracking-tight sm:text-4xl lg:text-5xl">
                 {current?.title ?? ""}
               </h1>
 
-              <p className="mt-2 text-sm text-zinc-700 dark:text-zinc-200">
+              <p className="mt-3 max-w-2xl text-base text-zinc-700 dark:text-zinc-200 sm:text-[15px]">
                 {current?.subtitle ?? ""}
               </p>
 
