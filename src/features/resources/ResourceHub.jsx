@@ -30,6 +30,12 @@ export default function ResourceHub() {
 
   return (
     <div className="min-h-full">
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-50 focus:rounded-xl focus:bg-zinc-900 focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-white"
+      >
+        Saltar al contenido
+      </a>
       <TopBar
         siteName={metadata.site_name}
         lastUpdate={metadata.last_update}
@@ -50,7 +56,7 @@ export default function ResourceHub() {
         }}
       />
 
-      <main className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
+      <main id="main-content" className="mx-auto w-full max-w-6xl px-4 pb-16 pt-6 sm:px-6 lg:px-8">
         <StatsStrip stats={stats} />
 
         <ResourceTabs
